@@ -1,0 +1,37 @@
+// Author: Tyler Despatie
+// Student Number: 101010622
+// Course: 2406
+// Section: A1
+// Assignment 5
+// Filename: index.pug
+
+doctype 5
+html
+  head
+    title Comp 2406 - Assignment 5 - Index
+    link(rel='stylesheet', href='style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+    script(src="recipePage.js")
+  body
+    #navigation
+      form
+        h1#header COMP 2406 A5 Recipes!
+        p Recipe:
+        select#recipeSelect(onchange='viewRecipe()')
+        br
+        button#recipeViewButton(type="button", onclick="viewRecipe()") View
+    hr
+    #content
+      p Name:
+      input#recipeName(type="text")
+      p Duration:
+      input#recipeDuration(type="text")
+      p Ingredients:
+      textarea#recipeIngredients(rows="8")
+      p Steps:
+      textarea#recipeDirections(rows="8")
+      p Notes:
+      textarea#recipeNotes(rows="8")
+      button#recipeSubmitButton(type="button", onclick="sendRecipe()") Submit
+      #confirmed(style="display:none;")
+        img#checkmark(alt="image" src="checkmark.png")
